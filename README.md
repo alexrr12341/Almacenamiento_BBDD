@@ -1,7 +1,6 @@
 ## Práctica Cooperativa (Almacenamiento)
 
 ![](/fotos/Alumno1.png)
-
 		|
 		|
 		|
