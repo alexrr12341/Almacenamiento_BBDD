@@ -8,7 +8,6 @@ Parte grupal
 
 
 
-
 ORACLE:
 
 1. Cread un índice para la tabla EMP de SCOTT que agilice las consultas por nombre de empleado en un tablespace creado específicamente para índices. ¿Dónde deberiáis ubicar el fichero de datos asociado? ¿Cómo se os ocurre que podriáis probar si el índice resulta de utilidad?
@@ -79,14 +78,38 @@ SQL> select * from dept;
 
 4. Queremos limpiar nuestro fichero tnsnames.ora. Averiguad cuales de sus entradas se están usando en algún enlace de la base de datos.
 
-Vamos a elegir un select que mire los procesos que están en el tnsnames.ora y v$session dirá si está o no está funcionando, hemos realizado una conexión de postgresql a oracle para ello.
-```
-SQL> select logon_time, program ,state,service_name,type from v$session where service_name in (select distinct(host) from dba_db_links);
+El fichero tsnames son las conexiones a las que nuestro servidor de Oracle puede acceder, hemos observado que hay una conexión activa.
 
-LOGON_TI PROGRAM                      STATE           SERVICE_NAME                               TYPE
--------- ------------------------------------------------ ------------------- ---------------------------------------------------------------- ----------
-28/01/20 main: postgres postgres [local] SELECT@psqlserve WAITING          orcl                                   USER
 ```
+SQL> select * from v$dblink;
+
+DB_LINK            OWNER_ID LOG HET PROTOC OPENCURSORS IN UPD COMMIT_POINT_STRENGTH     CON_ID
+-------------------- ---------- --- --- ------ ------------ --- --- --------------------- ----------
+GRUPAL                  0 YES NO    UNKN          0 YES NO            0       1
+```
+
+
+Hay creados todos estos db_links, pero solo está activo uno, por lo que los demás podriamos descartarlos
+```
+SQL> select * from dba_db_links;
+
+OWNER             DB_LINK          USERNAME           HOST            CREATED
+-------------------- -------------------- -------------------- -------------------- --------
+SYS             FERNANDO_DELEGADO      LUIS               orcluis            28/01/20
+SYS             FERNANDO_LINKLUIS3   LUIS               orcluis            13/01/20
+SYS             FERNANDO_LINKLUIS5   LUIS               orcluis            13/12/19
+SYS             FERNANDO_LINKLUIS2   LUIS               orcl2            13/12/19
+SYS             FERNANDO_LINKLUIS      LUIS               orcl            13/12/19
+SYS             FERNANDO_LINKORCL      PALOMA           orcl            12/12/19
+SYS             FERNANDO_LINK      PALOMA           oraDB            12/12/19
+PUBLIC             GRUPAL          delegadofer           PSQLU            28/01/20
+PUBLIC             FERNANDODELEGADOLUIS clienteconexion      PSQLU            28/01/20
+PUBLIC             FERNANDODELEGADO      clienteconexion      PSQLU            28/01/20
+PUBLIC             FERNANDOPOSTGRESLUIS clienteconexion      PSQLU            13/12/19
+
+11 filas seleccionadas.
+```
+
 
 5. Meted las tablas EMP y DEPT de SCOTT en un cluster.
 
@@ -224,20 +247,33 @@ size 3M
 autoextend on;
 ```
 
+Create or replace procedure ReorganizarBalance(p_users varchar2)
+is
+	cursor c_tablespaces is
+	SELECT tablespace_name
+	FROM dba_tablespaces 
+	WHERE contents = 'TEMPORARY';
+begin
+end;
+/
+
 Create or replace procedure BalanceoCargaTemp
 is
 	v_cuentaspaces number(2):=0;
 	v_cuentausers number(3):=0;
+	v_resultado number(3):=0;
+	v_modulo number(1):=0;
 begin
 	SELECT count(tablespace_name) into v_cuentaspaces 
 	FROM dba_tablespaces 
 	WHERE contents = 'TEMPORARY';
 	Select count(username) into v_cuentausers
 	from dba_users;
-	dbms_output.put_line(v_cuentausers);
-	dbms_output.put_line(abs(v_cuentausers/v_cuentaspaces));
+	v_resultado:=round(v_cuentausers/v_cuentaspaces);
+	
 end;
 /
+
 
 
 7. Realizad un pequeño artículo o una entrada para un blog técnico explicando las limitaciones que presentan MySQL y Postgres para gestionar el almacenamiento de los datos respecto a ORACLE, si es que presentan alguna.
