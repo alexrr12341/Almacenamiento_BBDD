@@ -3,9 +3,7 @@
 ![](/fotos/Alumno1.png)
 
 		|
-
 		|
-
 		|
 
 
