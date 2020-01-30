@@ -309,33 +309,95 @@ Create temporary tablespace custom_temp2
 tempfile '/opt/oracle/oradata/orcl/customtemp2.dbf'
 size 3M
 autoextend on;
+
+
+Create temporary tablespace custom_temp3
+tempfile '/opt/oracle/oradata/orcl/customtemp3.dbf'
+size 3M
+autoextend on;
+
 ```
 
+
 ```sql
-Create or replace procedure ReorganizarBalance(p_users varchar2)
+create or replace procedure ConseguirMinTablespace(p_tablespace IN OUT VARCHAR2,
+                   p_cuenta IN OUT NUMBER)
 is
-	cursor c_tablespaces is
-	SELECT tablespace_name
-	FROM dba_tablespaces 
-	WHERE contents = 'TEMPORARY';
 begin
+
+    Select count(u.username) as cuenta, t.tablespace_name INTO p_cuenta, p_tablespace
+    from dba_users u, dba_tablespaces t
+    where u.temporary_tablespace(+) = t.tablespace_name
+    and u.username != 'XS$NULL'
+    and t.contents = 'TEMPORARY'
+    group by t.tablespace_name
+    order by cuenta asc
+    fetch first row only;
+
 end;
 /
 
-Create or replace procedure BalanceoCargaTemp
+create or replace procedure ConseguirMaxTablespace(p_tablespace IN OUT VARCHAR2,
+                   p_cuenta IN OUT NUMBER)
 is
-	v_cuentaspaces number(2):=0;
-	v_cuentausers number(3):=0;
-	v_resultado number(3):=0;
-	v_modulo number(1):=0;
 begin
-	SELECT count(tablespace_name) into v_cuentaspaces 
-	FROM dba_tablespaces 
-	WHERE contents = 'TEMPORARY';
-	Select count(username) into v_cuentausers
-	from dba_users;
-	v_resultado:=round(v_cuentausers/v_cuentaspaces);
-	
+
+    Select count(u.username) as cuenta, t.tablespace_name INTO p_cuenta, p_tablespace
+    from dba_users u, dba_tablespaces t
+    where u.temporary_tablespace(+) = t.tablespace_name
+    and u.username != 'XS$NULL'
+    and t.contents = 'TEMPORARY'
+    group by t.tablespace_name
+    order by cuenta desc
+    fetch first row only;
+
+end;
+/
+
+
+create or replace procedure BalanceoCargaTemp
+is
+
+    v_numusuarios NUMBER;
+    v_menor NUMBER;
+    v_mayor NUMBER;
+    v_menorts VARCHAR2(20);
+    v_mayorts VARCHAR2(20);
+
+begin
+    ConseguirMinTablespace(v_menorts,v_menor);
+    ConseguirMaxTablespace(v_mayorts,v_mayor);
+    while v_mayor != v_menor loop
+        if v_menor < v_mayor then
+            v_numusuarios:=v_mayor - v_menor;
+            if v_numusuarios = 1 then
+                exit;
+                else
+                RealizarBalance(v_mayorts,v_menorts);
+                ConseguirMinTablespace(v_menorts,v_menor);
+                ConseguirMaxTablespace(v_mayorts,v_mayor);
+            end if;
+        end if;
+    end loop;
+
+end;
+/
+
+create or replace procedure RealizarBalance(p_tablespacemayor VARCHAR2,
+                        p_tablespacemenor VARCHAR2)
+is
+
+    v_user VARCHAR2(50);
+
+begin
+
+    select username into v_user
+    from dba_users
+    where temporary_tablespace = p_tablespacemayor
+    and username != 'XS$NULL'
+    fetch first row only;
+    execute immediate 'alter user '||v_user||' temporary tablespace '||p_tablespacemenor;
+
 end;
 /
 ```
