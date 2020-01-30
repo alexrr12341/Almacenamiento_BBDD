@@ -618,11 +618,18 @@ Initial 256K
 
 d) Pepe decide que los programadores tengan acceso a la tabla Prueba antes creada y puedan ceder ese derecho y el de conectarse a la base de datos a los usuarios que ellos quieran.
 
+```sql
 GRANT READ ON PEPE.PRUEBA TO PROGRAMADORES WITH GRANT OPTION;
-
+grant create session to programadores with admin option;
+```
 
 
 
 f) Lidia y Jaime dejan la empresa, borra los usuarios y el espacio de tablas correspondiente, detalla los pasos necesarios para que no quede rastro del espacio de tablas.
 
+```sql
+drop user Lidia;
+drop user Jaime;
+drop tablespace Produccion including contents and datafiles;
+```
 
