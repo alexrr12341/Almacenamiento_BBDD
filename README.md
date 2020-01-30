@@ -402,14 +402,14 @@ Elementos de la arquitectura
     
   -  Shards: Son los clusters en donde se encuentra los documentos de nuestras colecciones. Cada cluster contiene un subconjunto del dataset. La información dentro de un cluster se agrupa en torno a agrupaciones lógicas denominados chunks.
 
-  -  Config Server: Son instancias mongod que contienen metadatos asociados al dataset. Básicamente indican la localización de los documentos en base 	   a shards o chunks. Puede desplegarse en forma de réplica.
+  -  Config Server: Son instancias mongod que contienen información asociados al dataset. En concreto indican donde se encuentran los documentos en base a shards o chunks. Puede desplegarse en forma de réplica.
 
-Las acciones que deben tener lugar para que la información se distribuya entre los clusters son:
+Para que la información se distribuya entre los clusters :
 
-    Split Chunks: La subdivisión de chunks se produce cuando se sobrepasa el tamaño del mismo ya que existe un exceso de documentos.
-    Migration Chunks: La migración es el procedimiento de distribuir un chunk de un shard a otro. Este proceso lo lleva a cabo un proceso denominado 	 balancer ubicado en el nodo primario del Config Server. Cuando este proceso detecta que la diferencia entre el número de chunks del shard que más 	  tiene con el que menos tiene sobrepasa un umbral y se inicia la migración.
+    Split Chunks: Es la subdivisión de chunks y se produce cuando se sobrepasa el tamaño, ya que hay un límite de documentos.
+    Migration Chunks: La migración es el procedimiento de distribuir un chunk de un shard a otro. Este proceso lo realiza un proceso llamado balancer que se encuentra en el nodo primario del Config Server. Cuando dicho proceso compara entre el número de chunks del shard que mas tiene con el que tiene menos, se inicia la migración.
 
-El sharding trabaja a nivel de colección de tal forma que podemos decidir que colecciones queremos distribuir y cuales no. Las colecciones que no se encuentran distribuidas siempre se encontrarán en el shard primario.
+El sharding trabaja a nivel de colección, con esto podemos decidir que colecciones queremos distribuir. Las colecciones que no hayamos distribuido se encontrarán en el shard primario.
 
 ![](/fotos/sharding.jpg)
 
