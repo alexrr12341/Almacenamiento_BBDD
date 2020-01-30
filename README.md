@@ -311,11 +311,20 @@ size 3M
 autoextend on;
 
 
-Create temporary tablespace custom_temp3
-tempfile '/opt/oracle/oradata/orcl/customtemp3.dbf'
+Create temporary tablespace custom_temp4
+tempfile '/opt/oracle/oradata/orcl/customtemp4.dbf'
 size 3M
 autoextend on;
 
+Create temporary tablespace custom_temp5
+tempfile '/opt/oracle/oradata/orcl/customtemp5.dbf'
+size 3M
+autoextend on;
+
+Create temporary tablespace custom_temp6
+tempfile '/opt/oracle/oradata/orcl/customtemp6.dbf'
+size 3M
+autoextend on;
 ```
 
 
@@ -328,7 +337,6 @@ begin
     Select count(u.username) as cuenta, t.tablespace_name INTO p_cuenta, p_tablespace
     from dba_users u, dba_tablespaces t
     where u.temporary_tablespace(+) = t.tablespace_name
-    and u.username != 'XS$NULL'
     and t.contents = 'TEMPORARY'
     group by t.tablespace_name
     order by cuenta asc
@@ -345,7 +353,6 @@ begin
     Select count(u.username) as cuenta, t.tablespace_name INTO p_cuenta, p_tablespace
     from dba_users u, dba_tablespaces t
     where u.temporary_tablespace(+) = t.tablespace_name
-    and u.username != 'XS$NULL'
     and t.contents = 'TEMPORARY'
     group by t.tablespace_name
     order by cuenta desc
