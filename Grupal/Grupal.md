@@ -1,31 +1,3 @@
-# Práctica Cooperativa (Almacenamiento)
-
-* ![Alumno 1](https://github.com/ftiradob)
-	* ![Oracle]()
-	* ![PostgreSQL]()
-	* ![MariaDB]()
-	* ![MongoDB]()
-* ![Alumno 2](https://github.com/alexrr12341)
-	* ![Oracle]()
-	* ![PostgreSQL]()
-	* ![MariaDB]()
-	* ![MongoDB]()
-
-* ![Alumno 3](https://github.com/moralg)
-	* ![Oracle]()
-	* ![PostgreSQL]()
-	* ![MariaDB]()
-	* ![MongoDB]()
-
-* ![Alumno 4](https://github.com/alvarocn)
-	* ![Oracle]()
-	* ![PostgreSQL]()
-	* ![MariaDB]()
-	* ![MongoDB]()
-
-* ![Parte grupal](/Grupal/Grupal.md)
-
-
 ### 1. Cread un índice para la tabla EMP de SCOTT que agilice las consultas por nombre de empleado en un tablespace creado específicamente para índices. ¿Dónde deberiáis ubicar el fichero de datos asociado? ¿Cómo se os ocurre que podriáis probar si el índice resulta de utilidad?
 
 
@@ -102,7 +74,7 @@ Como podemos apreciar, el tiempo es menor en la segunda consulta pero no es una 
 
 
        
-2. Realizad una consulta al diccionario de datos que muestre qué  índices existen para objetos pertenecientes al esquema de SCOTT y sobre qué columnas están definidos. Averiguad en qué fichero o ficheros de datos se encuentran las extensiones de sus segmentos correspondientes.
+### 2. Realizad una consulta al diccionario de datos que muestre qué  índices existen para objetos pertenecientes al esquema de SCOTT y sobre qué columnas están definidos. Averiguad en qué fichero o ficheros de datos se encuentran las extensiones de sus segmentos correspondientes.
 
 ```sql
 SELECT a.TABLE_NAME, a.INDEX_NAME, a.COLUMN_NAME, c.FILE_NAME
@@ -120,7 +92,7 @@ EMP             EMP_ENAME      ENAME          /opt/oracle/oradata/orcl/users01.d
 ```
       
 
-3. Cread una secuencia para rellenar el campo deptno de la tabla dept de forma coherente con los datos ya existentes. Insertad al menos dos registros haciendo uso de la secuencia.
+### 3. Cread una secuencia para rellenar el campo deptno de la tabla dept de forma coherente con los datos ya existentes. Insertad al menos dos registros haciendo uso de la secuencia.
 
 Creamos la secuencia, que empezará por 50, y incrementará su número 10 veces ya que es como funciona deptno.
 ```sql
@@ -156,7 +128,7 @@ SQL> select * from dept;
 ```
   
 
-4. Queremos limpiar nuestro fichero tnsnames.ora. Averiguad cuales de sus entradas se están usando en algún enlace de la base de datos.
+### 4. Queremos limpiar nuestro fichero tnsnames.ora. Averiguad cuales de sus entradas se están usando en algún enlace de la base de datos.
 
 El fichero tsnames son las conexiones a las que nuestro servidor de Oracle puede acceder, hemos observado que hay una conexión activa.
 
@@ -191,7 +163,7 @@ PUBLIC             FERNANDOPOSTGRESLUIS clienteconexion      PSQLU            13
 ```
 
 
-5. Meted las tablas EMP y DEPT de SCOTT en un cluster.
+### 5. Meted las tablas EMP y DEPT de SCOTT en un cluster.
 
 Creamos el tablespace para usarlo en el cluster
 ```sql
@@ -300,7 +272,7 @@ CLUSTER_NAME
 EMP_DEPT
 ```
 
-6. Realizad un procedimiento llamado BalanceoCargaTemp que balancee la carga de usuarios entre los tablespaces temporales existentes. Para ello averiguará cuántos existen y asignará los usuarios entre ellos de forma equilibrada. Si es necesario para comprobar su funcionamiento, crea tablespaces temporales nuevos.
+### 6. Realizad un procedimiento llamado BalanceoCargaTemp que balancee la carga de usuarios entre los tablespaces temporales existentes. Para ello averiguará cuántos existen y asignará los usuarios entre ellos de forma equilibrada. Si es necesario para comprobar su funcionamiento, crea tablespaces temporales nuevos.
 
 Vamos a observar cuantos tablespaces temporales tenemos
 
@@ -426,7 +398,7 @@ end;
 ```
 
 
-7. Realizad un pequeño artículo o una entrada para un blog técnico explicando las limitaciones que presentan MySQL y Postgres para gestionar el almacenamiento de los datos respecto a ORACLE, si es que presentan alguna.
+### 7. Realizad un pequeño artículo o una entrada para un blog técnico explicando las limitaciones que presentan MySQL y Postgres para gestionar el almacenamiento de los datos respecto a ORACLE, si es que presentan alguna.
 
 # Almacenamiento en Postgresql, MySQL y ORACLE
 En este post se van a desarrollar las principales diferencias que hay entre los tres gestores de bases de datos en cuanto a la gestión del almacenamiento.
@@ -477,7 +449,7 @@ https://openbinary20.com/2017/01/31/limitaciones-de-postgresql-y-mysql-respecto-
 NOTAS: Hay que ver si en MySQL hay tablespaces. Acabar las definiciones y poner los incovenientes.
 
 
-8. Explicad en qué consiste el sharding en MongoDB.
+### 8. Explicad en qué consiste el sharding en MongoDB.
 
 Sharding consiste en repartir los conjuntos de datos a los distintos clusters, que denominamos shars, de tal forma que exista una distribución de los datos equitativamente a lo largo de los distintos nodos. Por lo tanto el sharding nos permite mejorar el rendimiento de nuestro sistema ya que al distribuir la carga entre distintas máquinas no existe sobrecarga de un nodo.
 
@@ -498,11 +470,11 @@ El sharding trabaja a nivel de colección, con esto podemos decidir que coleccio
 
 ![](/fotos/sharding.jpg)
 
-9. Resolved el siguiente caso práctico en ORACLE:
+### 9. Resolved el siguiente caso práctico en ORACLE:
 
 En nuestra empresa existen tres departamentos: Informática, Ventas y Producción. En Informática trabajan tres personas: Pepe, Juan y Clara. En Ventas trabajan Ana y Eva y en Producción Jaime y Lidia.
 
-a)  Pepe es el administrador de la base de datos.
+a)  Pepe es el administrador de la base de datos. 
 Juan y Clara son los programadores de la base de datos, que trabajan tanto en la aplicación que usa el departamento de Ventas como en la usada por el departamento de Producción.
 Ana y Eva tienen permisos para insertar, modificar y borrar registros en las tablas de la aplicación de Ventas que tienes que crear, y se llaman Productos y Ventas, siendo propiedad de Ana.
 Jaime y Lidia pueden leer la información de esas tablas pero no pueden modificar la información.
