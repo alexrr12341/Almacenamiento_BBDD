@@ -22,7 +22,7 @@
 	* ![Oracle]()
 	* ![PostgreSQL]()
 	* ![MariaDB]()
-	* ![MongoDB]()
+	* ![MongoDB](/fotos/MongoDB.png)
 
 * ![Parte grupal](/Grupal/Grupal.md)
 
