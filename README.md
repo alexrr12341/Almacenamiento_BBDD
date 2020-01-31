@@ -18,7 +18,7 @@
 	* ![MariaDB](https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#mysql)
 	* ![MongoDB](https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#mongodb)
 
-[logo]: /fotos/Oracle2.png
+[logo]: https://github.com/alexrr12341/Almacenamiento_BBDD/blob/master/fotos/Oracle.png
 [google]: http://www.google.com/
 * ![Alumno 4-Álvaro Camargo](https://github.com/alvarocn)
 	* [logo][google]
