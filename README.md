@@ -1,6 +1,6 @@
 ## Práctica Cooperativa (Almacenamiento)
 
-
+![Alumno 1]()
 
 
 Parte grupal
