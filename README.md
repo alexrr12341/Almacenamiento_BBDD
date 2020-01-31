@@ -12,6 +12,11 @@
 [PostgresAleR]:https://github.com/alexrr12341/Almacenamiento_BBDD_Alumno2#postgres
 [MariaDBAleR]:https://github.com/alexrr12341/Almacenamiento_BBDD_Alumno2#mysql
 [MongoDBAleR]:https://github.com/alexrr12341/Almacenamiento_BBDD_Alumno2#mongodb
+[OracleAleM]:https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#oracle
+[PostgresAleM]:https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#postgres
+[MariaDBAleM]:https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#mysql
+[MongoDBAleM]:https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#mongodb)
+
 
 * ![Alumno 1-Fernando Tirado](https://github.com/ftiradob)
 	* [![logoOracleFer][logoOracle]][OracleFer]
@@ -25,17 +30,19 @@
 	* [![logoMariadbAleR][logoMariaDB]][MariaDBAleR]
 	* [![logoMongoDBAleR][logoMongoDB]][MongoDBAleR]
 
-* ![Alumno 3-Alejandro Morales](https://github.com/moralg)
-	* ![Oracle](https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#oracle)
-	* ![PostgreSQL](https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#postgres)
-	* ![MariaDB](https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#mysql)
-	* ![MongoDB](https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#mongodb)
-
-* ![Alumno 4-Álvaro Camargo](https://github.com/alvarocn)
+* ![Alumno 3-Álvaro Camargo](https://github.com/alvarocn)
 	* [![Oracle logo][logo]][google]
 	* ![PostgreSQL](/fotos/PostgreSQL2.png)
 	* ![MariaDB](/fotos/MariaDB2.png)
 	* ![MongoDB](/fotos/MongoDB2.png)
+
+* ![Alumno 4-Alejandro Morales](https://github.com/moralg)
+	* [![logoOracleAleM][logoOracle]][OracleAleM]
+	* [![logoPostgresAleM][logoPostgres]][PostgresAleM]
+	* [![logoMariadbAleM][logoMariaDB]][MariaDBAleM]
+	* [![logoMongoDBAleM][logoMongoDB]][MongoDBAleM]
+
+
 
 * ![Parte grupal](/Grupal/Grupal.md)
 
