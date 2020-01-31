@@ -1,8 +1,11 @@
 # Práctica Cooperativa (Almacenamiento)
 
 ![Alumno 1](https://github.com/ftiradob)
+
 ![Alumno 2](https://github.com/alexrr12341)
+
 ![Alumno 3](https://github.com/moralg)
+
 ![Alumno 4](https://github.com/alvarocn)
 
 Parte grupal
