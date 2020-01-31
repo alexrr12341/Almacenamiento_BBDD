@@ -313,6 +313,25 @@ Create temporary tablespace custom_temp6
 tempfile '/opt/oracle/oradata/orcl/customtemp6.dbf'
 size 3M
 autoextend on;
+
+Create temporary tablespace custom_temp7
+tempfile '/opt/oracle/oradata/orcl/customtemp7.dbf'
+size 3M
+autoextend on;
+
+Create temporary tablespace custom_temp8
+tempfile '/opt/oracle/oradata/orcl/customtemp8.dbf'
+size 3M
+autoextend on;
+Create temporary tablespace custom_temp9
+tempfile '/opt/oracle/oradata/orcl/customtemp9.dbf'
+size 3M
+autoextend on;
+
+Create temporary tablespace custom_temp11
+tempfile '/opt/oracle/oradata/orcl/customtemp11.dbf'
+size 3M
+autoextend on;
 ```
 
 
@@ -333,6 +352,7 @@ begin
 end;
 /
 
+
 create or replace procedure ConseguirMaxTablespace(p_tablespace IN OUT VARCHAR2,
                    p_cuenta IN OUT NUMBER)
 is
@@ -350,31 +370,48 @@ end;
 /
 
 
+Create or replace procedure ComprobarTablespaceInexistente(p_username varchar2,p_temporary varchar2)
+is
+	v_comprobar number:=0;
+begin
+	select count(tablespace_name) into v_comprobar
+	from dba_tablespaces
+	where contents='TEMPORARY'
+	and tablespace_name=p_temporary;
+	
+	if v_comprobar=0 then
+		    execute immediate 'alter user '||p_username||' temporary tablespace temp';
+	end if;
+end;
+/
+
+Create or replace procedure ComprobarTablespaces
+is
+	cursor c_usertemps is
+	Select username,temporary_tablespace
+	from dba_users;
+begin
+	for v_usertemps in c_usertemps loop
+		ComprobarTablespaceInexistente(v_usertemps.username,v_usertemps.temporary_tablespace);
+	end loop;
+end;
+/
+
 create or replace procedure BalanceoCargaTemp
 is
-
-    v_numusuarios NUMBER;
     v_menor NUMBER;
     v_mayor NUMBER;
     v_menorts VARCHAR2(20);
     v_mayorts VARCHAR2(20);
-
 begin
+    ComprobarTablespaces;
     ConseguirMinTablespace(v_menorts,v_menor);
     ConseguirMaxTablespace(v_mayorts,v_mayor);
-    while v_mayor != v_menor loop
-        if v_menor < v_mayor then
-            v_numusuarios:=v_mayor - v_menor;
-            if v_numusuarios = 1 then
-                exit;
-                else
-                RealizarBalance(v_mayorts,v_menorts);
-                ConseguirMinTablespace(v_menorts,v_menor);
-                ConseguirMaxTablespace(v_mayorts,v_mayor);
-            end if;
-        end if;
+    while v_mayor != v_menor and v_mayor!=v_menor+1 loop
+        RealizarBalance(v_mayorts,v_menorts);
+        ConseguirMinTablespace(v_menorts,v_menor);
+        ConseguirMaxTablespace(v_mayorts,v_mayor);
     end loop;
-
 end;
 /
 
