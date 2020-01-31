@@ -8,7 +8,10 @@
 [PostgresFer]:https://github.com/ftiradob/Gestion_almacenamiento_BBDD#postgresql
 [MariaDBFer]:https://github.com/ftiradob/Gestion_almacenamiento_BBDD#mariadb
 [MongoDBFer]:https://github.com/ftiradob/Gestion_almacenamiento_BBDD#mongodb
-
+[OracleAleR]:https://github.com/alexrr12341/Almacenamiento_BBDD_Alumno2#oracle
+[PostgresAleR]:https://github.com/alexrr12341/Almacenamiento_BBDD_Alumno2#postgres
+[MariaDBAleR]:https://github.com/alexrr12341/Almacenamiento_BBDD_Alumno2#mysql
+[MongoDBAleR]:https://github.com/alexrr12341/Almacenamiento_BBDD_Alumno2#mongodb
 
 * ![Alumno 1-Fernando Tirado](https://github.com/ftiradob)
 	* [![logoOracleFer][logoOracle]][OracleFer]
@@ -21,6 +24,10 @@
 	* ![PostgreSQL](https://github.com/alexrr12341/Almacenamiento_BBDD_Alumno2#postgres)
 	* ![MariaDB](https://github.com/alexrr12341/Almacenamiento_BBDD_Alumno2#mysql)
 	* ![MongoDB](https://github.com/alexrr12341/Almacenamiento_BBDD_Alumno2#mongodb)
+        * [![logoOracleAleR][logoOracle]][OracleAleR]
+        * [![logoPostgresAleR][logoPostgres]][PostgresAleR]
+        * [![logoMariadbAleR][logoMariaDB]][MariaDBAleR]
+        * [![logoMongoDBAleR][logoMongoDB]][MongoDBAleR]
 
 * ![Alumno 3-Alejandro Morales](https://github.com/moralg)
 	* ![Oracle](https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#oracle)
