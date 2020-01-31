@@ -16,7 +16,10 @@
 [PostgresAleM]:https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#postgres
 [MariaDBAleM]:https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#mysql
 [MongoDBAleM]:https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#mongodb
-
+[OracleAlv]:https://github.com/alvarocn
+[PostgresAlv]:https://github.com/alvarocn
+[MariaDBAlv]:https://github.com/alvarocn
+[MongoDBAlv]:https://github.com/alvarocn
 
 * ![Alumno 1-Fernando Tirado](https://github.com/ftiradob)
 	* [![logoOracleFer][logoOracle]][OracleFer]
@@ -31,10 +34,10 @@
 	* [![logoMongoDBAleR][logoMongoDB]][MongoDBAleR]
 
 * ![Alumno 3-Álvaro Camargo](https://github.com/alvarocn)
-	* [![Oracle logo][logo]][google]
-	* ![PostgreSQL](/fotos/PostgreSQL2.png)
-	* ![MariaDB](/fotos/MariaDB2.png)
-	* ![MongoDB](/fotos/MongoDB2.png)
+	* [![logoOracleAlv][logoOracle]][OracleAlv]
+	* [![logoPostgresAlv][logoPostgres]][PostgresAlv]
+	* [![logoMariaDBAlv][logoMariaDB]][MariaDBAlv]
+	* [![logoMongoDBAlv][logoMongoDB]][MongoDBAlv]
 
 * ![Alumno 4-Alejandro Morales](https://github.com/moralg)
 	* [![logoOracleAleM][logoOracle]][OracleAleM]
