@@ -21,7 +21,7 @@
 [logo]: https://github.com/alexrr12341/Almacenamiento_BBDD/blob/master/fotos/Oracle.png
 [google]: http://www.google.com/
 * ![Alumno 4-Álvaro Camargo](https://github.com/alvarocn)
-	* [logo][google]
+	* [![Oracle logo[logo]][google]
 	* ![PostgreSQL](/fotos/PostgreSQL2.png)
 	* ![MariaDB](/fotos/MariaDB2.png)
 	* ![MongoDB](/fotos/MongoDB2.png)
