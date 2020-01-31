@@ -1,4 +1,4 @@
-## Práctica Cooperativa (Almacenamiento)
+### Práctica Cooperativa (Almacenamiento)
 
 ![Alumno 1](https://github.com/ftiradob)
 
@@ -8,9 +8,9 @@ Parte grupal
 
 
 
-ORACLE:
+## ORACLE
 
-1. Cread un índice para la tabla EMP de SCOTT que agilice las consultas por nombre de empleado en un tablespace creado específicamente para índices. ¿Dónde deberiáis ubicar el fichero de datos asociado? ¿Cómo se os ocurre que podriáis probar si el índice resulta de utilidad?
+# 1. Cread un índice para la tabla EMP de SCOTT que agilice las consultas por nombre de empleado en un tablespace creado específicamente para índices. ¿Dónde deberiáis ubicar el fichero de datos asociado? ¿Cómo se os ocurre que podriáis probar si el índice resulta de utilidad?
 
 
 Creamos el tablespace que tendrá la ubicación por defecto de todos los tablespace
