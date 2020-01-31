@@ -17,9 +17,11 @@
 	* ![PostgreSQL](https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#postgres)
 	* ![MariaDB](https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#mysql)
 	* ![MongoDB](https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#mongodb)
-	
+
+[logo]: /fotos/Oracle2.png
+[google]: http://www.google.com/
 * ![Alumno 4-Álvaro Camargo](https://github.com/alvarocn)
-	* ![/fotos/Oracle2.png](http://www.google.com)
+	* [logo][google]
 	* ![PostgreSQL](/fotos/PostgreSQL2.png)
 	* ![MariaDB](/fotos/MariaDB2.png)
 	* ![MongoDB](/fotos/MongoDB2.png)
