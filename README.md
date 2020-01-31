@@ -20,14 +20,10 @@
 	* [![logoMongoDBFer][logoMongoDB]][MongoDBFer]
 
 * ![Alumno 2-Alejandro Rodríguez](https://github.com/alexrr12341)
-	* ![Oracle](https://github.com/alexrr12341/Almacenamiento_BBDD_Alumno2#oracle)
-	* ![PostgreSQL](https://github.com/alexrr12341/Almacenamiento_BBDD_Alumno2#postgres)
-	* ![MariaDB](https://github.com/alexrr12341/Almacenamiento_BBDD_Alumno2#mysql)
-	* ![MongoDB](https://github.com/alexrr12341/Almacenamiento_BBDD_Alumno2#mongodb)
-        * [![logoOracleAleR][logoOracle]][OracleAleR]
-        * [![logoPostgresAleR][logoPostgres]][PostgresAleR]
-        * [![logoMariadbAleR][logoMariaDB]][MariaDBAleR]
-        * [![logoMongoDBAleR][logoMongoDB]][MongoDBAleR]
+	* [![logoOracleAleR][logoOracle]][OracleAleR]
+	* [![logoPostgresAleR][logoPostgres]][PostgresAleR]
+	* [![logoMariadbAleR][logoMariaDB]][MariaDBAleR]
+	* [![logoMongoDBAleR][logoMongoDB]][MongoDBAleR]
 
 * ![Alumno 3-Alejandro Morales](https://github.com/moralg)
 	* ![Oracle](https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#oracle)
