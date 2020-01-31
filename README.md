@@ -23,12 +23,8 @@
 	* ![MariaDB]()
 	* ![MongoDB]()
 
-Parte grupal
-------------
+* ![Parte grupal]()
 
-
-
-## ORACLE
 
 ### 1. Cread un índice para la tabla EMP de SCOTT que agilice las consultas por nombre de empleado en un tablespace creado específicamente para índices. ¿Dónde deberiáis ubicar el fichero de datos asociado? ¿Cómo se os ocurre que podriáis probar si el índice resulta de utilidad?
 
