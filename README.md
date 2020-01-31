@@ -19,7 +19,7 @@
 	* ![MongoDB](https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#mongodb)
 	
 * ![Alumno 4-Álvaro Camargo](https://github.com/alvarocn)
-	* ![Oracle](/fotos/Oracle2.png)
+	* ![/fotos/Oracle2.png](http://www.google.com)
 	* ![PostgreSQL](/fotos/PostgreSQL2.png)
 	* ![MariaDB](/fotos/MariaDB2.png)
 	* ![MongoDB](/fotos/MongoDB2.png)
