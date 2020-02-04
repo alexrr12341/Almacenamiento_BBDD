@@ -23,25 +23,25 @@
 
 * ![Parte grupal](/Grupal/Grupal.md)
 
-* [Alumno 1-Fernando Tirado](https://github.com/ftiradob)
+* [Alumno 1-Fernando Tirado](https://github.com/ftiradob/Gestion_almacenamiento_BBDD)
 	* [![logoOracleFer][logoOracle]][OracleFer]
 	* [![logoPostgresFer][logoPostgres]][PostgresFer]
 	* [![logoMariadbFer][logoMariaDB]][MariaDBFer]
 	* [![logoMongoDBFer][logoMongoDB]][MongoDBFer]
 
-* [Alumno 2-Alejandro Rodríguez](https://github.com/alexrr12341)
+* [Alumno 2-Alejandro Rodríguez](https://github.com/alexrr12341/Almacenamiento_BBDD_Alumno2)
 	* [![logoOracleAleR][logoOracle]][OracleAleR]
 	* [![logoPostgresAleR][logoPostgres]][PostgresAleR]
 	* [![logoMariadbAleR][logoMariaDB]][MariaDBAleR]
 	* [![logoMongoDBAleR][logoMongoDB]][MongoDBAleR]
 
-* [Alumno 3-Álvaro Camargo](https://github.com/alvarocn)
+* [Alumno 3-Álvaro Camargo](https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/practica5-alumno3.md)
 	* [![logoOracleAlv][logoOracle]][OracleAlv]
 	* [![logoPostgresAlv][logoPostgres]][PostgresAlv]
 	* [![logoMariaDBAlv][logoMariaDB]][MariaDBAlv]
 	* [![logoMongoDBAlv][logoMongoDB]][MongoDBAlv]
 
-* [Alumno 4-Alejandro Morales](https://github.com/moralg)
+* [Alumno 4-Alejandro Morales](https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md)
 	* [![logoOracleAleM][logoOracle]][OracleAleM]
 	* [![logoPostgresAleM][logoPostgres]][PostgresAleM]
 	* [![logoMariadbAleM][logoMariaDB]][MariaDBAleM]
