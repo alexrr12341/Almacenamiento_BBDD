@@ -520,12 +520,12 @@ Ahora vamos a crear un rol para los programadores, ya que van a desarrolar aplic
 
 |Privilegio         |Descripción
 |:------------------|:---------------------
-|CREATE TABLE       |
-|CREATE VIEW        |
-|CREATE PROCEDURE   |
-|CREATE TRIGGER     |
-|CREATE SEQUENCE    |
-|CREATE SYNONYM     |
+|CREATE TABLE       |Capacidad para crear tablas sobre la base de datos
+|CREATE VIEW        |Capacidad para crear vistas sobre una tabla de la base de datos
+|CREATE PROCEDURE   |Capacidad para crear procedimientos sobre la base de datos
+|CREATE TRIGGER     |Capacidad para crear triggers sobre la base de datos
+|CREATE SEQUENCE    |Capacidad para crear secuencias sobre la base de datos, que sirve para crear objetos únicos secuencialmente.
+|CREATE SYNONYM     |Capacidad para crear un nombre alternativo para una tabla,vista,procedimiento,trigger,etc.
 
 ```sql
 create role Programadores;
