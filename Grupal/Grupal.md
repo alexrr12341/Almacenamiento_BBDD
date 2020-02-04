@@ -297,41 +297,6 @@ Create temporary tablespace custom_temp2
 tempfile '/opt/oracle/oradata/orcl/customtemp2.dbf'
 size 3M
 autoextend on;
-
-
-Create temporary tablespace custom_temp4
-tempfile '/opt/oracle/oradata/orcl/customtemp4.dbf'
-size 3M
-autoextend on;
-
-Create temporary tablespace custom_temp5
-tempfile '/opt/oracle/oradata/orcl/customtemp5.dbf'
-size 3M
-autoextend on;
-
-Create temporary tablespace custom_temp6
-tempfile '/opt/oracle/oradata/orcl/customtemp6.dbf'
-size 3M
-autoextend on;
-
-Create temporary tablespace custom_temp7
-tempfile '/opt/oracle/oradata/orcl/customtemp7.dbf'
-size 3M
-autoextend on;
-
-Create temporary tablespace custom_temp8
-tempfile '/opt/oracle/oradata/orcl/customtemp8.dbf'
-size 3M
-autoextend on;
-Create temporary tablespace custom_temp9
-tempfile '/opt/oracle/oradata/orcl/customtemp9.dbf'
-size 3M
-autoextend on;
-
-Create temporary tablespace custom_temp11
-tempfile '/opt/oracle/oradata/orcl/customtemp11.dbf'
-size 3M
-autoextend on;
 ```
 
 
