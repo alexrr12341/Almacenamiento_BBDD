@@ -21,7 +21,7 @@
 [MariaDBAlv]:https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/practica5-alumno3.md#mysql
 [MongoDBAlv]:https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/practica5-alumno3.md#mongodb
 
-* ![Parte grupal](/Grupal/Grupal.md)
+* [Parte grupal](/Grupal/Grupal.md)
 
 * [Alumno 1-Fernando Tirado](https://github.com/ftiradob/Gestion_almacenamiento_BBDD)
 	* [![logoOracleFer][logoOracle]][OracleFer]
