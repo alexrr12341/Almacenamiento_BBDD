@@ -437,54 +437,77 @@ end;
 
 ### 7. Realizad un pequeño artículo o una entrada para un blog técnico explicando las limitaciones que presentan MySQL y Postgres para gestionar el almacenamiento de los datos respecto a ORACLE, si es que presentan alguna.
 
-# Almacenamiento en Postgresql, MySQL y ORACLE
-En este post se van a desarrollar las principales diferencias que hay entre los tres gestores de bases de datos en cuanto a la gestión del almacenamiento.
-
 ### PostgreSQL
 
-Principales definiciones:
+El **Storage Manager** es quien lleva a cabo la administración de almacenamiento de datos. PostgreSQL posee un solo **Storage Manager**, y este esta compuesto por varios módulos que proveen administración de las transacciones y acceso a los objetos de la base de datos. Estos tienen principalmente 3 objetivos:
 
-- **Bloques**: unidad más pequeña del disco que forman páginas.
-- **Páginas**: almacena los datos, que a su vez se guardan en diferentes posiciones del disco. La dispersión de estas páginas es un gran problema para las DBMS. El tamaño mínimo, y por defecto, de una página es de 8k y máximo 32k. No se permiten tuplas más grandes que las páginas. 
-- **Storage-toast**: técnica que utiliza para superar la limitación de que las tuplas de gran tamaño. Consiste en gruardar estos datos comprimidos y divididos en filas en una tabla paralela sin que el usuario lo llegue a apreciar. 
-- **Buffer Manager**: controlador de la memoria.
-- **Storage Manager**: responsable de la administración general de almacenamiento de los datos. PostgreSQL solo posee uno para todo el servidor compuesto por varios módulos que administran las transacciones y acceso a los objetos de las bases de datos. Los módulos son: **Transaction System**, **Relational Storage**, **Time Management**, **Concurrency Control**, **Timestamp Management** y **Record Acces**.
-- **Tablespaces**: permite definir ubicaciones en el sistema de archivos donde almacenar los archivos que representan los objetos de la base de datos. 
+- Manejar transacciones sin necesidad de escribir código complejo de recuperación en caso de caídas.
+- Mantener versiones históricas de la data bajo el concepto de “graba una vez, lee muchas veces”.
+- Tomar las ventajas que ofrece el hardware especializado como multiprocesadores, memoria no volátil, etc.
 
-Principales incovenientes en almacenamiento con respecto a ORACLE:
+Los nombres de estos módulos son: Transaction System, Relational Storage, Time Management, Record Access, Concurrency Control y Timestamp Management.
 
-- Antes de la versión 9.0 no soportaba tablespaces para difinir dónde almacenar la base de datos, el esquema, los índices, etc.
+Otras características del almacenamiento en PostgreSQL:
+
+- En PostgreSQL no es posible almacenar archivos muy grandes directamente. Para superar esta limitación, se comprimen y/o se dividen en múltiples filas. Esta técnica se conoce como **TOAST**.
+- El tamaño mínimo, y por defecto, de una página es de 8k y máximo 32k. No se permiten tuplas más grandes que las páginas.
+- Cada relación en una base de datos tiene un **Visibility Map**, que se encarga de realizar un seguimiento de las mismas.
+- El **Free Space Map** se encarga de realizar un seguimiento del espacio disponible en una relación.
+
+Limitaciones respecto a ORACLE:
+
+- Antes de la versión 9.0 no soportaba tablespaces para definir dónde almacenar la base de datos, el esquema, los índices, etc.
 - No presenta clausulas de almacenamiento de datos, lo que impide asignar cuotas de almacenamiento.
-> Para controlar el espacio utilizado en tabla se puede utilizar la función **pg_total_ralation_size**.
 - Las transacciones se abortan completamente en caso de fallo durante su ejecución.
 - Tamaño máximo de una tabla: 32 TB.
-- Tamaño máximo de una tupla: 1,6 TB.
-- Tamaño máximo de un campo: 1 GB.
+- Tamaño máximo de una fila: 400 GB
+- Tamaño máximo de un campo: 1 GB
 
 ### MySQL
 
-Principales definiciones:
-- **Motor de almacenamiento**: se encarga de almacenar, manajar y recuperar información de un tabla. Los más conocidos son **MyISAM** e **InnoDB**.
-- **MyISAM**: motor de almacenamiento por defecto. Tiene mayor velocidad en general para recuperar datos que InnoDB.
-- **InnoDB**: motor de almacenamiento transaccional con capacidades de commit, rollback, recuperación de fallos, bloqueo de registros y características ACID. Indicado para usos elevados de INSERT y UPDATE.
-> Para crear una tabla InnoDB se debe especificar en su creación:
-~~~
-CREATE TABLE customers (a INT, b CHAR (20), INDEX (a)) ENGINE=InnoDB;
-CREATE TABLE customers (a INT, b CHAR (20), INDEX (a)) TYPE=InnoDB;
-~~~
+Las principales caracteristicas del almacenamiento de los datos en MySql son los motores de almacenamientos.
 
-Principales incovenientes en almacenamiento con respecto a ORACLE:
-- Mayor número de índices por tabla: 64 - ilimitado en ORACLE
-- Número máximo de columnas usadas en índices 16 columnas - 30 en ORACLE
-- Tamaño máximo de índice: 1000 Bytes.
-- Máximo de registros soportados: 50 millones de registros - 450 mil millones en ORACLE.
+Los motor de almacenamiento son los encargados de controlar y recuperar los datos de un tabla. Los mas relevantes son:
 
-https://mundodelinux.wordpress.com/2019/01/22/limitaciones-de-mysql-y-postgresql-en-la-gestion-de-almacenamiento-respecto-a-oracle-database/
+|Motor de almacenamiento| Descripción
+|:------:|:----------
+|MyISAM| Es el motor de almacenamiento que se utiliza por defecto. La pricipal caracteristica de este motor es la gran velocidad que obtiene en las consultas, ya que no tiene que hacer comprobaciones de la integridad referencial.
+|InnoDB| este motor empieza a sustituir a MyISAM. Soporta transacciones y bloqueos de registro e integridad referencial, además ofrece una fiabilidad y consistencia muy superior a MyISAM.
+|NBD| Es el motor usado por Mysql Cluster para implementar tablas que se particionan en varias máquinas.
 
-https://openbinary20.com/2017/01/31/limitaciones-de-postgresql-y-mysql-respecto-a-oracle-en-gestion-de-almacenamiento/
+Limitaciones respecto a ORACLE:
 
-NOTAS: Hay que ver si en MySQL hay tablespaces. Acabar las definiciones y poner los incovenientes.
+- En MySQL el número máximo de índices por cada tabla es 64, en cambio en Oracle es ilimitado.
+- Las columnas usadas en índices son de 16 columnas como máximo y en Oracle es el doble.
+- El número máximo de registros es de 50 millones y 450 mil millones en Oracle.
+- Tamaño máximo de índice: 1 GB.
 
+En Mysql como en Oracle podemos crear y asignar un tablespace, además de el tamaño inicial de una tabla, la característica de que pueda extenderse automáticamente en el caso que hiciera falta y asignar un cierto tamaño a la extensión. La sintaxis para crear un tablespace es la que veremos a continuación:
+
+```sql
+CREATE TABLESPACE tablespace_name
+
+  InnoDB and NDB:
+    ADD DATAFILE 'file_name'
+
+  InnoDB only:
+    [FILE_BLOCK_SIZE = value]
+
+  NDB only:
+    USE LOGFILE GROUP logfile_group
+    [EXTENT_SIZE [=] extent_size]
+    [INITIAL_SIZE [=] initial_size]
+    [AUTOEXTEND_SIZE [=] autoextend_size]
+    [MAX_SIZE [=] max_size]
+    [NODEGROUP [=] nodegroup_id]
+    [WAIT]
+    [COMMENT [=] 'string']
+
+  InnoDB and NDB:
+    [ENGINE [=] engine_name]
+```
+
+La principal desventaja de Mysql respecto a Oracle es que en INNODB no podemos asignar una cuota a cada usuario en cualquier tablespace. Un tablespace creado en INNODB es considerado un tablespace general, el cual es compartido y es similar al tablespace del sistema.
 
 ### 8. Explicad en qué consiste el sharding en MongoDB.
 
