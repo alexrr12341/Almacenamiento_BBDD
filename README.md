@@ -16,10 +16,10 @@
 [PostgresAleM]:https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#postgres
 [MariaDBAleM]:https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#mysql
 [MongoDBAleM]:https://github.com/MoralG/Gestion_del_Almacenamiento_BBDD/blob/master/AlejandroM_Individual.md#mongodb
-[OracleAlv]:https://github.com/alvarocn
-[PostgresAlv]:https://github.com/alvarocn
-[MariaDBAlv]:https://github.com/alvarocn
-[MongoDBAlv]:https://github.com/alvarocn
+[OracleAlv]:https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/practica5-alumno3.md#oracle
+[PostgresAlv]:https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/practica5-alumno3.md#postgresql
+[MariaDBAlv]:https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/practica5-alumno3.md#mysql
+[MongoDBAlv]:https://github.com/alvarocn/practica5-almacenamiento-alumno3/blob/master/practica5-alumno3.md#mongodb
 
 * ![Alumno 1-Fernando Tirado](https://github.com/ftiradob)
 	* [![logoOracleFer][logoOracle]][OracleFer]
