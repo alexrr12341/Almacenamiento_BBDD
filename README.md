@@ -23,25 +23,25 @@
 
 * ![Parte grupal](/Grupal/Grupal.md)
 
-* ![Alumno 1-Fernando Tirado](https://github.com/ftiradob)
+* [Alumno 1-Fernando Tirado](https://github.com/ftiradob)
 	* [![logoOracleFer][logoOracle]][OracleFer]
 	* [![logoPostgresFer][logoPostgres]][PostgresFer]
 	* [![logoMariadbFer][logoMariaDB]][MariaDBFer]
 	* [![logoMongoDBFer][logoMongoDB]][MongoDBFer]
 
-* ![Alumno 2-Alejandro Rodríguez](https://github.com/alexrr12341)
+* [Alumno 2-Alejandro Rodríguez](https://github.com/alexrr12341)
 	* [![logoOracleAleR][logoOracle]][OracleAleR]
 	* [![logoPostgresAleR][logoPostgres]][PostgresAleR]
 	* [![logoMariadbAleR][logoMariaDB]][MariaDBAleR]
 	* [![logoMongoDBAleR][logoMongoDB]][MongoDBAleR]
 
-* ![Alumno 3-Álvaro Camargo](https://github.com/alvarocn)
+* [Alumno 3-Álvaro Camargo](https://github.com/alvarocn)
 	* [![logoOracleAlv][logoOracle]][OracleAlv]
 	* [![logoPostgresAlv][logoPostgres]][PostgresAlv]
 	* [![logoMariaDBAlv][logoMariaDB]][MariaDBAlv]
 	* [![logoMongoDBAlv][logoMongoDB]][MongoDBAlv]
 
-* ![Alumno 4-Alejandro Morales](https://github.com/moralg)
+* [Alumno 4-Alejandro Morales](https://github.com/moralg)
 	* [![logoOracleAleM][logoOracle]][OracleAleM]
 	* [![logoPostgresAleM][logoPostgres]][PostgresAleM]
 	* [![logoMariadbAleM][logoMariaDB]][MariaDBAleM]
