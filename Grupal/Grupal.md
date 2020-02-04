@@ -488,8 +488,8 @@ Elementos de la arquitectura
 
 Para que la información se distribuya entre los clusters :
 
-    Split Chunks: Es la subdivisión de chunks y se produce cuando se sobrepasa el tamaño, ya que hay un límite de documentos.
-    Migration Chunks: La migración es el procedimiento de distribuir un chunk de un shard a otro. Este proceso lo realiza un proceso llamado balancer que se encuentra en el nodo primario del Config Server. Cuando dicho proceso compara entre el número de chunks del shard que mas tiene con el que tiene menos, se inicia la migración.
+  -  Split Chunks: Es la subdivisión de chunks y se produce cuando se sobrepasa el tamaño, ya que hay un límite de documentos.
+  -  Migration Chunks: La migración es el procedimiento de distribuir un chunk de un shard a otro. Este proceso lo realiza un proceso llamado balancer que se encuentra en el nodo primario del Config Server. Cuando dicho proceso compara entre el número de chunks del shard que mas tiene con el que tiene menos, se inicia la migración.
 
 El sharding trabaja a nivel de colección, con esto podemos decidir que colecciones queremos distribuir. Las colecciones que no hayamos distribuido se encontrarán en el shard primario.
 
@@ -700,6 +700,8 @@ Initial 256K
 
 d) Pepe decide que los programadores tengan acceso a la tabla Prueba antes creada y puedan ceder ese derecho y el de conectarse a la base de datos a los usuarios que ellos quieran.
 
+Le damos permisos de lectura a los programadores y que puedan darlo, y que puedan dar conexiones también.
+
 ```sql
 GRANT READ ON PEPE.PRUEBA TO PROGRAMADORES WITH GRANT OPTION;
 grant create session to programadores with admin option;
@@ -708,6 +710,8 @@ grant create session to programadores with admin option;
 
 
 f) Lidia y Jaime dejan la empresa, borra los usuarios y el espacio de tablas correspondiente, detalla los pasos necesarios para que no quede rastro del espacio de tablas.
+
+Para ello, simplemente borramos ambos usuarios y el tablespace con todos los contenidos
 
 ```sql
 drop user Lidia;
